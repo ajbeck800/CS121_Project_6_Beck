@@ -11,7 +11,7 @@ date.o: student.h date.h date.cpp
 	g++ -c -g date.cpp
 
 address.o: student.h address.h address.cpp
-        g++ -c -g address.cpp
+	g++ -c -g address.cpp
 
 clean:
 	rm *.o
