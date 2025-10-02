@@ -4,34 +4,40 @@
 ```mermaid
 classDiagram
     class Student{
-      - string firstName
-      - string lastName
-      - string birthDate
-      - string gradDate
-      - int creditHours
-      - string studentString
+      # string studentString
+      # string firstName
+      # string lastName
+      # Date* birthDate
+      # Date* gradDate
+      # Address* address
+      # int creditHours
       + Student()
-      + void newStudent()
+      + ~Student()
       + void init(studentString)
       + void printStudent()
-      + void getLastFirst()
+      + string getFirstName()
+      + string getLastName()
+      + int getCreditHours()
     }
     class Address{
-      - string street
-      - string city
-      - string state
-      - int zip
+      # string street
+      # string city
+      # string state
+      # string zip
       + Address()
       + void init(street, city, state, zip)
       + void printAddress()
     }
     class Date{
-      - string dateString
+      # string dateString
+      # int month
+      # int day
+      # int year
       + Date()
       + void init(dateString)
       + void printDate()
     }
 
-Address o-- Student
-Date o-- Student
+Student o-- Address
+Student o-- Date
 ```
