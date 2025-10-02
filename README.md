@@ -4,6 +4,9 @@
 ```mermaid
 classDiagram
     class Student{
+      - string firstName
+      - string lastName
+      - int creditHours
       - string studentString
       + Student()
       + void newStudent()
@@ -12,12 +15,18 @@ classDiagram
       + void getLastFirst()
     }
     class Address{
+      - string street
+      - string city
+      - string state
+      - int zip
       - string addressString
       + Address()
       + void init(addressString)
       + void printAddress()
     }
     class Date{
+      - string birthDate
+      - string gradDate
       - string dateString
       + Date()
       + void init(dateString)
