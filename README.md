@@ -6,6 +6,8 @@ classDiagram
     class Student{
       - string firstName
       - string lastName
+      - string birthDate
+      - string gradDate
       - int creditHours
       - string studentString
       + Student()
@@ -19,14 +21,11 @@ classDiagram
       - string city
       - string state
       - int zip
-      - string addressString
       + Address()
-      + void init(addressString)
+      + void init(street, city, state, zip)
       + void printAddress()
     }
     class Date{
-      - string birthDate
-      - string gradDate
       - string dateString
       + Date()
       + void init(dateString)
