@@ -57,27 +57,32 @@ in constructor:
 
 #### void init(studentString)
 ```
-
+initialize studentString, firstName, lastName, street, city, state, zip, tBirthDate, tGradDate, and tCreditHours
 ```
 
 #### void printStudent()
 ```
+print studentString
+```
 
+#### string getLastFirst()
+```
+store first and last name as a string in the format last, first
 ```
 
 #### string getFirstName()
 ```
-
+store first name as a string
 ```
 
 #### string getLastName()
 ```
-
+store last name as a string
 ```
 
 #### int getCreditHours()
 ```
-
+store credit hours as an integer
 ```
 
 ### class address()
@@ -91,13 +96,12 @@ in constructor:
 
 #### void init(street, city, state, zip)
 ```
-string address = street, city, state, zip 
+initialize street, city, state, zip 
 ```
 
 #### void printAddress()
 ```
-for each student:
-  print address
+print street, city, state, zip
 ```
 
 ### class date()
@@ -113,11 +117,10 @@ in constructor:
 
 #### void init(dateString)
 ```
-
+intialize dateString, tMonth, tDay, tYear
 ```
 
 #### void printDate()
 ```
-for each student:
-  print dateString
+print dateString
 ```
