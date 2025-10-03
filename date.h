@@ -4,7 +4,7 @@
 #include <string>
 
 class Date {
-  private:
+  protected:
 	std::string dateString;
 	int month;
 	int day;
