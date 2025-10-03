@@ -1,33 +1,46 @@
-std::stringstream ss;
-ss.str(studentString);
+#include "student.h" 
+#include "address.h"
+#include "date.h"
+#include <iostream>
 
-std::string street;
-std::string city;
-std::string state;
-std::string zip;
-std::string tBirthDate;
-std::string tGradDate;
-std::string tCreditHours;
+Student::Student(){
 
-getLine(ss, firstName, ',');
-getLine(ss, lastName, ',');
-getLine(ss, street, ',');
-getLine(ss, city, ',');
-getLine(ss, state, ',');
-getLine(ss, zip, ',');
-getLine(ss, tBirthDate, ',');
-getLine(ss, tGradDate, ',');
-getLine(ss, tCreditHours);
+} // end constructor
 
-address->init(street, city, state, zip);
-birthDate->init(tBirthDate);
-gradDate->init(tGradDate);
+void Student::init(std::string studentString){
+	std::stringstream ss;
+	ss.str(studentString);
+	
+	std::string street;
+	std::string city;
+	std::string state;
+	std::string zip;
+	std::string tBirthDate;
+	std::string tGradDate;
+	std::string tCreditHours;
 
-ss.clear();
-ss.str(tCreditHours);
-ss >> creditHours;
+	getLine(ss, firstName, ',');
+	getLine(ss, lastName, ',');
+	getLine(ss, street, ',');
+	getLine(ss, city, ',');
+	getLine(ss, state, ',');
+	getLine(ss, zip, ',');
+	getLine(ss, tBirthDate, ',');
+	getLine(ss, tGradDate, ',');
+	getLine(ss, tCreditHours);
 
-std::cout << "Birth: ";
-birthDate->printDate();
-std::cout << "Grad: ";
-gradDate->printDate()
+	address->init(street, city, state, zip);
+	birthDate->init(tBirthDate);
+	gradDate->init(tGradDate);
+
+	ss.clear();
+	ss.str(tCreditHours);
+	ss >> creditHours;
+} // end init
+
+void Student::printStudent(){
+	std::cout << "Birth: ";
+	birthDate->printDate();
+	std::cout << "Grad: ";
+	gradDate->printDate();
+} // end printAddress
