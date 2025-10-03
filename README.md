@@ -47,7 +47,9 @@ Student o-- Date
 ```
 in header:
   initialize strings studentString, firstName, lastName
-
+  send birthDate to the Date class
+  send gradDate to the Date class
+  send address to the Address class
   initialize integer creditHours
 in constructor:
   go through each student
