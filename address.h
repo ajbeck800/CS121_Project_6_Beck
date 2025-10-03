@@ -4,7 +4,7 @@
 #include <string>
 
 class Address {
-  private:
+  protected:
 	  std::string street;
 	  std::string city;
 	  std::string state;
