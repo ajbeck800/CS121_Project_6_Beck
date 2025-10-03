@@ -1,16 +1,17 @@
 heapStudents: main.o date.o address.o student.o
-	g++ -g critter.o car.o main.o -o game
+	g++ -g main.o date.o address.o student.o -o heapStudents
 
-main.o: main.cpp date.h
-	g++ -g
+main.o: main.cpp date.h address.h student.h
+	g++ -c -g main.cpp
 
-date.o: 
+date.o: date.cpp date.h
+	g++ -c -g date.cpp
 
+address.o: address.cpp address.h
+	g++ -c -g address.cpp
 
-address.o: 
-
-
-student.o: 
+student.o: student.cpp student.h
+	g++ -c -g student.cpp
 
 run: heapStudents
 	./heapStudents
@@ -21,3 +22,6 @@ clean:
 
 debug: heapStudents
 	gdb heapStudents
+
+valgrind:
+	valgrind ./heapStudents
