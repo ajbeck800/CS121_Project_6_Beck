@@ -26,3 +26,8 @@ gradDate->init(tGradDate);
 ss.clear();
 ss.str(tCreditHours);
 ss >> creditHours;
+
+std::cout << "Birth: ";
+birthDate->printDate();
+std::cout << "Grad: ";
+gradDate->printDate()

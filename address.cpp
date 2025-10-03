@@ -18,4 +18,4 @@ void Address::init(std::string street, std::string city, std::string state, std:
 void Address::printAddress(){
 	std::cout << street << std::endl;
 	std::cout << city << " " << state << ", " << zip << std::endl;
-} // end getDriver
+} // end printAddress

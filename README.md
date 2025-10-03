@@ -15,6 +15,7 @@ classDiagram
       + ~Student()
       + void init(studentString)
       + void printStudent()
+      + string getLastFirst()
       + string getFirstName()
       + string getLastName()
       + int getCreditHours()
