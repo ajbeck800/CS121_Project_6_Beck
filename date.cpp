@@ -3,19 +3,18 @@
 
 Date::Date(){
 	dateString = "";
-	month = tMonth;
-	date = tDate;
-	year = tYear;
+	month = 0;
+	day = 0;
+	year = 0;
 } // end constructor
 
 void Date::init(std::string dateString){
 	Date::dateString = dateString;
-	std::stringstream ss;
-	std::string tMonth;
-	std::string tDate;
-	std::string tYear;
+	std::string month = month;
+	std::string day = day;
+	std::string year = year;
 } // end init
 
 void Date::printDate(){
-	std::cout << tMonth << " " << tDate << ", " << tYear << std::endl;
+	std::cout << month << " " << day << ", " << year << std::endl;
 } // end printDate
