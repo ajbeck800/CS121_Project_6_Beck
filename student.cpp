@@ -50,4 +50,27 @@ void Student::printStudent(){
 	birthDate->printDate();
 	std::cout << "Grad: ";
 	gradDate->printDate();
+
+	std::cout << "Credits: " << creditHours << std::endl;
+	std::cout << "____________________________________";
+	std::cout << std::endl;
 } // end printStudent
+
+std::string Student::getLastFirst(){
+	std::stringstream ss;
+	ss.clear();
+	ss << lastName << ", " << firstName;
+	return ss.str();
+} // end getLastFirst
+
+std::string Student::getLastName(){
+	return lastName;
+} // end getLastName
+
+std::string Student::getFirstName(){
+        return firstName;
+} // end getFirstName
+
+int Student::getCreditHours(){
+        return creditHours;
+} // end getCreditHours
