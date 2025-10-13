@@ -2,9 +2,16 @@
 #include "address.h"
 #include "date.h"
 #include <iostream>
+#include <sstream>
 
 Student::Student(){
-
+	studentString = "";
+	firstName = "";
+	lastName = "";
+	birthDate = "";
+	gradDate = "";
+	address = "";
+	creditHours = 0;
 } // end constructor
 
 void Student::init(std::string studentString){
@@ -19,15 +26,15 @@ void Student::init(std::string studentString){
 	std::string tGradDate;
 	std::string tCreditHours;
 
-	getLine(ss, firstName, ',');
-	getLine(ss, lastName, ',');
-	getLine(ss, street, ',');
-	getLine(ss, city, ',');
-	getLine(ss, state, ',');
-	getLine(ss, zip, ',');
-	getLine(ss, tBirthDate, ',');
-	getLine(ss, tGradDate, ',');
-	getLine(ss, tCreditHours);
+	getline(ss, firstName, ',');
+	getline(ss, lastName, ',');
+	getline(ss, street, ',');
+	getline(ss, city, ',');
+	getline(ss, state, ',');
+	getline(ss, zip, ',');
+	getline(ss, tBirthDate, ',');
+	getline(ss, tGradDate, ',');
+	getline(ss, tCreditHours);
 
 	address->init(street, city, state, zip);
 	birthDate->init(tBirthDate);
@@ -43,4 +50,4 @@ void Student::printStudent(){
 	birthDate->printDate();
 	std::cout << "Grad: ";
 	gradDate->printDate();
-} // end printAddress
+} // end printStudent

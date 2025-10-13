@@ -1,5 +1,10 @@
 #include "date.h"
 #include <iostream>
+#include <sstream>
+
+std::string currentLine;
+std::stringstream converter;
+std::string tMonth, tDay, tYear;
 
 Date::Date(){
 	dateString = "";
