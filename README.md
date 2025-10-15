@@ -43,6 +43,59 @@ Student o-- Address
 Student o-- Date
 ```
 
+### main()
+```
+Load up the vector from students.csv
+Until the user wants to quit:
+  Print the menu
+  Perform tasks based on user input
+Clear the students vector
+```
+
+#### loadStudents(students vector)
+```
+Open students.csv
+For each line of the file:
+  Create a Student instance on the heap
+  Initialize that instance with the string from the csv file
+  Append that instance to the vector at the end
+Close the file
+```
+
+#### printStudents(students vector)
+```
+For each line of students.csv:
+  Print out all data for each student
+```
+
+#### showStudentNames(students vector)
+```
+For each line of students.csv:
+  Print out the last name and first name of each student
+```
+
+#### findStudent(students vector)
+```
+Print "Enter last name of student: "
+Store input in string lastNameRequest
+Check lastNameRequest against the data file using string.find()
+Print any lastNames that match lastNameRequest
+```
+
+#### delStudents(students vector)
+```
+For each element in the students vector:
+  Delete that element
+```
+
+#### menu()
+```
+Print a menu with options quit, print all student names, print all student data, and find a student
+Print "Select 0-3: "
+Store input in string menuRequest
+Based on input, send user to delStudents, printStudents, showStudentNames, or findStudent
+```
+
 ### class student()
 ```
 in header:
