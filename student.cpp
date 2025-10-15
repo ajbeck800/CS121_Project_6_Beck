@@ -8,14 +8,16 @@ Student::Student(){
 	studentString = "";
 	firstName = "";
 	lastName = "";
-	Date* birthDate;
-	Date* gradDate;
-	Address* address;
+	birthDate = new Date();
+	gradDate = new Date();
+	address = new Address();
 	creditHours = 0;
 } // end constructor
 
 Student::~Student(){
-
+	delete birthDate;
+	delete gradDate;
+	delete address;
 } // end constructor
 
 void Student::init(std::string studentString){
@@ -50,12 +52,18 @@ void Student::init(std::string studentString){
 } // end init
 
 void Student::printStudent(){
+	std::cout << firstName << " " << lastName << std::endl;
+	
+	address->printAddress();
+	
 	std::cout << "Birth: ";
 	birthDate->printDate();
+	
 	std::cout << "Grad: ";
 	gradDate->printDate();
-
+	
 	std::cout << "Credits: " << creditHours << std::endl;
+	
 	std::cout << "____________________________________";
 	std::cout << std::endl;
 } // end printStudent

@@ -21,5 +21,5 @@ void Date::init(std::string dateString){
 } // end init
 
 void Date::printDate(){
-	std::cout << month << " " << day << ", " << year << std::endl;
+	std::cout << dateString << std::endl;
 } // end printDate
