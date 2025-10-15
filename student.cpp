@@ -8,10 +8,14 @@ Student::Student(){
 	studentString = "";
 	firstName = "";
 	lastName = "";
-	birthDate = "";
-	gradDate = "";
-	address = "";
+	Date* birthDate;
+	Date* gradDate;
+	Address* address;
 	creditHours = 0;
+} // end constructor
+
+Student::~Student(){
+
 } // end constructor
 
 void Student::init(std::string studentString){
