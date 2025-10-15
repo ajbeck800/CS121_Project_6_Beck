@@ -1,39 +1,54 @@
+#include <fstream>
 #include <iostream>
+#include <sstream>
+#include <vector>
 #include "date.h"
 #include "address.h"
 #include "student.h"
 
-void testAddress();
-void testDate();
-void testStudent();
+void loadStudents(students);
+void printStudents(students vector);
+void showStudentNames(students vector);
+void findStudent(students vector);
+void delStudents(students vector);
+void menu();
 
 int main(){
-  std::cout << "Hello!" << std::endl;
-  testAddress();
-  testDate();
-  testStudent();
-  return 0;
+	std::ifstream inFile;
+	std::string currentLine;
+	std::stringstream converter;
+	
+	inFile.open("students.csv");
+	while (getline(inFile, currentLine)){
+		converter.clear();
+		converter.str(currentLine);
+ 	} // end while
+ 	inFile.close();
 } // end main
 
-void testAddress(){
-  Address a;
-  a.init("123 W Main St", "Muncie", "IN", "47303");
-  a.printAddress();
-} // end testAddress
+void loadStudents(students){
+	std::ifstream inFile;
 
-void testDate(){
- Date d;
- d.init("01/27/1997");
- d.printDate();
-} // end testDate
+	inFile.open("students.csv");
 
-void testStudent(){
-  std::string studentString = "Danielle,Johnson,32181 Johnson Course Apt. 389,New Jamesside,IN,59379,02/17/2004,05/15/2027,65";
-  Student* student = new Student();
-  student->init(studentString);
-  student->printStudent();
-  std::cout << std::endl;
-  std::cout << student->getLastFirst();
-  delete student;
-} // end testStudent
+} // end loadStudents
 
+void printStudents(students){
+        
+} // end printStudents
+
+void showStudentsNames(students){
+
+} // end showStudentsNames
+
+void findStudent(students){
+
+} // end findStudent
+
+void delStudent(students){
+
+} // end delStudent
+
+void menu(){
+
+} // end menu
