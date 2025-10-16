@@ -6,6 +6,9 @@
 #include "address.h"
 #include "student.h"
 
+void testAddress();
+void testDate();
+void testStudent();
 void loadStudents(students);
 void printStudents(students vector);
 void showStudentNames(students vector);
@@ -14,11 +17,37 @@ void delStudents(students vector);
 void menu();
 
 int main(){
+	std::cout << "Hello!" << std::endl;
+	testAddress();
+	testDate();
+	testStudent();
 	vector<Student*> students;
 	loadStudents(students);
 	menu(students);
 	return 0;
 } // end main
+
+void testAddress(){
+  Address a;
+  a.init("123 W Main St", "Muncie", "IN", "47303");
+  a.printAddress();
+} // end testAddress
+
+void testDate(){
+ Date d;
+ d.init("01/27/1997");
+ d.printDate();
+} // end testDate
+
+void testStudent(){
+  std::string studentString = "Danielle,Johnson,32181 Johnson Course Apt. 389,New Jamesside,IN,59379,02/17/2004,05/15/2027,65";
+  Student* student = new Student();
+  student->init(studentString);
+  student->printStudent();
+  std::cout << std::endl;
+  std::cout << student->getLastFirst();
+  delete student;
+} // end testStudent
 
 void loadStudents(vector<Student*>& students){
 	ifstream file("students.csv");
@@ -35,13 +64,13 @@ void loadStudents(vector<Student*>& students){
 void printStudents(const vector<Student*>& students){
 	for (const auto& student : students) {
 		student->printStudent();
-		cout << "-------------------" << endl;
+		std::cout << "____________________________________" << endl;
 	} // end for
 } // end printStudents
 
 void showStudentsNames(const vector<Student*>& students){
 	for (const auto& student : students) {
-		cout << student->getLastFirst() << endl;
+		std::cout << student->getLastFirst() << endl;
 	} // end for
 } // end showStudentsNames
 
@@ -53,7 +82,7 @@ void findStudent(const vector<Student*>& students){
 	for (const auto& student : students) {
 		if (student->getLastName().find(lastNameRequest) != std::string::npos) {
 			student->printStudent();
-			cout << "-------------------" << endl;
+			std::cout << "____________________________________" << endl;
 		} // end if
 	} // end for
 } // end findStudent
@@ -91,7 +120,7 @@ void menu(){
 			findStudent(students);
 		} // end else if
 		else {
-			cout << "Invalid selection. Try again.\n";
+			std::cout << "Invalid selection. Try again.\n";
 		} // end else
 	} // end while
 } // end menu
