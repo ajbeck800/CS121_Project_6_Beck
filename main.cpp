@@ -9,11 +9,11 @@
 void testAddress();
 void testDate();
 void testStudent();
-void loadStudents(students);
-void printStudents(students vector);
-void showStudentNames(students vector);
-void findStudent(students vector);
-void delStudents(students vector);
+void loadStudents(vector<type> para_name);
+void printStudents(vector<type> para_name);
+void showStudentNames(vector<type> para_name);
+void findStudent(vector<type> para_name);
+void delStudents(vector<type> para_name);
 void menu();
 
 int main(){
@@ -21,9 +21,11 @@ int main(){
 	testAddress();
 	testDate();
 	testStudent();
-	vector<Student*> students;
+	
+	std::vector<Student*> students;
 	loadStudents(students);
-	menu(students);
+	menu();
+
 	return 0;
 } // end main
 
@@ -65,7 +67,6 @@ void loadStudents(std::vector<Student*>& students){
 void printStudents(std::vector<Student*>& students){
 	for (Student* student: students) {
 		student->printStudent();
-		std::cout << "____________________________________" << std::endl;
 	} // end for
 } // end printStudents
 
@@ -80,11 +81,11 @@ void findStudent(std::vector<Student*>& students){
 	std::cout << "Enter last name of student: ";
 	std::string lastNameRequest;
 	std::cin >> lastNameRequest;
-	
+
 	for (Student* student: students) {
-		if (student->getLastName().find(lastNameRequest) != std::string::npos) {
+		std::string lName = student->getLastName();
+		if (lName.find(lastNameRequest) != std::string::npos) {
 			student->printStudent();
-			std::cout << "____________________________________" << std::endl;
 		} // end if
 	} // end for
 } // end findStudent
@@ -97,7 +98,7 @@ void delStudent(std::vector<Student*>& students){
 } // end delStudent
 
 void menu(){
-	std::string choice;
+	std::string selection;
 
 	bool keepGoing = true;
 
