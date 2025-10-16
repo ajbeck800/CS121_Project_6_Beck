@@ -49,46 +49,48 @@ void testStudent(){
   delete student;
 } // end testStudent
 
-void loadStudents(vector<Student*>& students){
-	ifstream file("students.csv");
-	string line;
+void loadStudents(std::vector<Student*>& students){
+	std::fstream inFile;
+	std::string currentLine;
 	
-	while (getline(file, line)) {
-		Student* s = new Student();
-		s->init(line);
+	inFile.open("students.csv")
+	while (getline(inFile, currentLine)) {
+		Student* s = new Student;
+		s->init(currentLine);
 		students.push_back(s);
 	} // end while
-	file.close();
+	inFile.close();
 } // end loadStudents
 
-void printStudents(const vector<Student*>& students){
-	for (const auto& student : students) {
+void printStudents(std::vector<Student*>& students){
+	for (Student* student: students) {
 		student->printStudent();
-		std::cout << "____________________________________" << endl;
+		std::cout << "____________________________________" << std::endl;
 	} // end for
 } // end printStudents
 
-void showStudentsNames(const vector<Student*>& students){
-	for (const auto& student : students) {
-		std::cout << student->getLastFirst() << endl;
+void showStudentsNames(std::vector<Student*>& students){
+	for (Student* student: students) {
+		std::cout << student->getLastFirst();
+		std::cout << ", " << student->getCreditHours() << std::endl;
 	} // end for
 } // end showStudentsNames
 
-void findStudent(const vector<Student*>& students){
+void findStudent(std::vector<Student*>& students){
 	std::cout << "Enter last name of student: ";
 	std::string lastNameRequest;
 	std::cin >> lastNameRequest;
 	
-	for (const auto& student : students) {
+	for (Student* student: students) {
 		if (student->getLastName().find(lastNameRequest) != std::string::npos) {
 			student->printStudent();
-			std::cout << "____________________________________" << endl;
+			std::cout << "____________________________________" << std::endl;
 		} // end if
 	} // end for
 } // end findStudent
 
-void delStudent(vector<Student*>& students){
-	for (auto student : students) {
+void delStudent(std::vector<Student*>& students){
+	for (Student* student: students) {
 		delete student;
 	} // end for
 	students.clear();
@@ -96,31 +98,32 @@ void delStudent(vector<Student*>& students){
 
 void menu(){
 	std::string choice;
-	
-	while (true) {
-		std::cout << "\nMenu:\n";
-		std::cout << "0. Quit\n";
-		std::cout << "1. Print all student names\n";
-		std::cout << "2. Print all student data\n";
-		std::cout << "3. Find a student\n";
+
+	bool keepGoing = true;
+
+	while (keepGoing == true) {
+		std::cout << "0) quit" << std::endl;
+		std::cout << "1) print all student names" << std::endl;
+		std::cout << "2) print all student data" << std::endl;
+		std::cout << "3) find a student" << std::endl;
 		std::cout << "Select 0-3: ";
-		std::cin >> choice;
+		std::cin >> selection;
 		
-		if (choice == "0") {
+		if (selection == "0") {
 			delStudents(students);
-			break;
+			keepGoing = false;
 		} // end if
-		else if (choice == "1") {
+		else if (selection == "1") {
 			showStudentNames(students);
 		} // end else if
-		else if (choice == "2") {
+		else if (selection == "2") {
 			printStudents(students);
 		} // end else if
-		else if (choice == "3") {
+		else if (selection == "3") {
 			findStudent(students);
 		} // end else if
 		else {
-			std::cout << "Invalid selection. Try again.\n";
+			std::cout << "Invalid selection. Select 0-3: " << std::endl;
 		} // end else
 	} // end while
 } // end menu
