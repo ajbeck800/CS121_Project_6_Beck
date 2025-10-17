@@ -9,11 +9,11 @@
 void testAddress();
 void testDate();
 void testStudent();
-void loadStudents(vector<type> para_name);
-void printStudents(vector<type> para_name);
-void showStudentNames(vector<type> para_name);
-void findStudent(vector<type> para_name);
-void delStudents(vector<type> para_name);
+void loadStudents(std::vector<string> name);
+void printStudents(std::vector<string> name);
+void showStudentNames(std::vector<string> name);
+void findStudent(std::vector<string> name);
+void delStudents(std::vector<string> name);
 void menu();
 
 int main(){
@@ -55,7 +55,7 @@ void loadStudents(std::vector<Student*>& students){
 	std::fstream inFile;
 	std::string currentLine;
 	
-	inFile.open("students.csv")
+	inFile.open("students.csv");
 	while (getline(inFile, currentLine)) {
 		Student* s = new Student;
 		s->init(currentLine);
