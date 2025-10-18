@@ -3,6 +3,7 @@
 #include "date.h"
 #include <iostream>
 #include <sstream>
+#include <string>
 
 Student::Student(){
 	studentString = "";

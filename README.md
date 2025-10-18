@@ -1,5 +1,5 @@
 # CS121_Project_6_Beck
-## (lab) Heap of students part 1
+## (lab) Heap of students
 
 ```mermaid
 classDiagram
